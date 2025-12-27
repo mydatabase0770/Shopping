@@ -41,7 +41,9 @@ public function store(PostRequest $request)
     if ($request->hasFile('image')) {
         $validated['image'] = $request->file('image')->store('posts', 'public');
     }
-
+    if($validated['discount'] == 0){
+        
+    }
     $post = Post::create($validated);
 
     $post->categories()->sync($request->category_id);

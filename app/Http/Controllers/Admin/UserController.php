@@ -54,6 +54,7 @@ public function index(Request $request)
 
     public function update(UserRequest $request, string $id)
     {
+      
         $user = User::findOrFail($id);
         $data = $request->validated();
 

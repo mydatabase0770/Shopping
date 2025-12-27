@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('color')->index(); // for filtering
             $table->string('size')->index(); // for filtering
+            $table->double('discount')->default(0);
             $table->timestamps();
         });
     }

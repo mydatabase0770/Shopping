@@ -29,6 +29,7 @@ public function rules(): array
         ],
 
         'color' => ['required', 'string', 'max:50'],
+        'discount' => ['nullable', 'numeric', 'max:50'],
 
         'size' => ['required', 'string', 'max:50'],
 
@@ -36,5 +37,5 @@ public function rules(): array
         'category_id.*' => ['exists:categories,id'],
     ];
 }
-    
+
 }
