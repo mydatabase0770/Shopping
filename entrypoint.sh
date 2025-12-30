@@ -2,6 +2,11 @@
 set -e
 
 echo "Caching configuration..."
+if [ ! -z "$RENDER_EXTERNAL_URL" ]; then
+    export APP_URL="$RENDER_EXTERNAL_URL"
+    echo "Set APP_URL to $APP_URL"
+fi
+
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
